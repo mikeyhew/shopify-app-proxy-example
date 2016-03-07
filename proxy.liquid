@@ -1,4 +1,7 @@
 {% layout none %}
 <pre>
 This is the proxy page for {{ shop.name }}.
+{{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}.
+List of products in the store:
+{% for product in collections['all'].products %} - {{ product.title }}<br>{% endfor %}
 </pre>
